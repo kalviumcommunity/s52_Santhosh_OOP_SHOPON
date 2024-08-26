@@ -4,7 +4,6 @@ class ShopOn {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         System.out.println("Welcome to 'SHOP-ON', a E-commerce stimulation!");
-        
         System.out.println("Please login to continue.");
         System.out.print("Enter Your Name: ");
         
