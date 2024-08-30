@@ -7,8 +7,8 @@ class ShopOn {
         System.out.println("Please login to continue.");
         System.out.print("Enter Your Name: ");
         
+        String userName = in.next();  //creating instance to the product class
         
-        String userName = in.next();
         Account user = new Account(userName);
         System.out.println("Hey " + user.getName() + ", You got RS." + user.getBalance() + " as a login bonus");
         Products products = new Products();
@@ -115,31 +115,31 @@ abstract class User {
 }
 
 
+
+
 class Account extends User {
-     private int balance; 
-     
-     public Account(String userName) {
-        super(userName);
-        this.balance = 1000; 
-     }
-     
-     public int getBalance(){
-        return this.balance;
+    private int balance; 
+    
+    public Account(String userName) {
+       super(userName);
+       this.balance = 1000; 
     }
     
-     public Boolean reduceBalance(int itemPrice){
-        if(this.balance >= itemPrice){
-            this.balance -= itemPrice;
-            return true;
-        }else{
-            return false;
-        }
-    }
-    
-    public void addBalance(int itemPrice){
-        this.balance+=itemPrice;
-    }
+    public int getBalance(){
+       return this.balance;
+   }
+   
+    public Boolean reduceBalance(int itemPrice){
+       if(this.balance >= itemPrice){
+           this.balance -= itemPrice;
+           return true;
+       }else{
+           return false;
+       }
+   }
+   
+   public void addBalance(int itemPrice){
+       this.balance+=itemPrice;
+   }
 }
-
-
 
