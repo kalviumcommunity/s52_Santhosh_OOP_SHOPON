@@ -8,8 +8,8 @@ class ShopOn {
         System.out.print("Enter Your Name: ");
         
         String userName = in.next();  //creating instance to the product class
-        
-        Account user = new Account(userName);
+       
+        Account user = new Account(userName); //using new keyword to create dynamic memory for objects
         System.out.println("Hey " + user.getName() + ", You got RS." + user.getBalance() + " as a login bonus");
         Products products = new Products();
         while(true){
@@ -114,9 +114,6 @@ abstract class User {
     }
 }
 
-
-
-
 class Account extends User {
     private int balance; 
     
@@ -142,4 +139,7 @@ class Account extends User {
        this.balance+=itemPrice;
    }
 }
+
+
+
 
