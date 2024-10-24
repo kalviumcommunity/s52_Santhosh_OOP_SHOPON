@@ -112,6 +112,14 @@ abstract class User {
     public String getName() {
         return this.userName;
     }
+
+    public Boolean reduceBalance(int itemPrice){
+        System.out.println("Your balance is subtracted by "+ itemPrice);
+    }
+    
+    public void addBalance(int itemPrice){
+        System.out.println("Your balance is added by "+ itemPrice);
+    }
 }
 
 
@@ -127,19 +135,19 @@ class Account extends User {
        return this.balance;
    }
    
-    public Boolean reduceBalance(int itemPrice){
-       if(this.balance >= itemPrice){
-           this.balance -= itemPrice;
-           return true;
-       }else{
-           return false;
-       }
-   }
    
-   public void addBalance(int itemPrice){
-       this.balance+=itemPrice;
-   }
+   public Boolean reduceBalance(int itemPrice){
+      if(this.balance >= itemPrice){
+          this.balance -= itemPrice;
+          return true;
+      }else{
+          return false;
+      }
+  }
+  
+  public void addBalance(int itemPrice){
+      this.balance+=itemPrice;
+    }
 } 
-
 
 
