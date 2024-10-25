@@ -116,12 +116,15 @@ abstract class User {
 
     public Boolean reduceBalance(int itemPrice){
         System.out.println("Your balance is subtracted by "+ itemPrice);
+        return true;
     }
     
     public void addBalance(int itemPrice){
         System.out.println("Your balance is added by "+ itemPrice);
     }
 }
+
+
 
 
 class Account extends User {
@@ -150,4 +153,3 @@ class Account extends User {
       this.balance+=itemPrice;
     }
 } 
-
