@@ -51,6 +51,7 @@ class ShopOn {
 }
 
 class Products{
+
     private class Product {
         private String name;
         private int price;
@@ -58,15 +59,20 @@ class Products{
         Product(String name,int price){
             this.name = name;
             this.price = price;
+            counter++;
         }
     }
     private ArrayList<Product> productList;
+
+    private static int counter = 0;
+    private static final int limit = 5;
 
     public Products() {
         productList = new ArrayList<>();
         productList.add(new Product("T-shirt", 999));
         productList.add(new Product("pant", 240));
         productList.add(new Product("Shoes", 410));
+
     }
     
     public boolean checkID(int index) {
@@ -78,9 +84,13 @@ class Products{
     }
     
     public void addProduct (String name,int price){
-        productList.add(new Product(name,price));
-        System.out.println("** Item Added Successfully **");
-        this.displayProducts();
+        if(counter < limit){
+            productList.add(new Product(name,price));
+            System.out.println("** Item Added Successfully **");
+            this.displayProducts();
+        }else{
+            System.out.println("Limit Reached!");
+        }
     }
     
     public void buyProduct(int index){
@@ -91,6 +101,7 @@ class Products{
     
     public void displayProducts (){
         int ID = 1;
+        System.out.println("Total number of products available: "+getCount());
         System.out.println("----------------------------------");
         System.out.println("ID    NAME    PRICE");
         System.out.println("----------------------------------");
@@ -100,8 +111,11 @@ class Products{
         }
         System.out.println("----------------------------------");
     }
-}
 
+    public int getCount(){
+        return counter;
+    }
+}
 
 abstract class User {
     protected String userName;
@@ -123,9 +137,6 @@ abstract class User {
         System.out.println("Your balance is added by "+ itemPrice);
     }
 }
-
-
-
 
 class Account extends User {
     private int balance; 
