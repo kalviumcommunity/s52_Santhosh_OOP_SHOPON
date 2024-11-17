@@ -140,17 +140,19 @@ abstract class User {
 }
 
 class Account extends User {
+    //Encapsulation
+
     private int balance; 
+
     
     public Account(String userName) {
        super(userName);
-       this.balance = 1000; 
+       this.balance = 1000; //Setter
     }
     
-    public int getBalance(){
+    public int getBalance(){ //Getter
        return this.balance;
    }
-   
    
    public Boolean reduceBalance(int itemPrice){
       if(this.balance >= itemPrice){
