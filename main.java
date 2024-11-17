@@ -112,8 +112,9 @@ class Products{
         System.out.println("----------------------------------");
     }
 
-    public int getCount(){
-        return counter;
+
+    public static int getCount(){
+         return counter;
     }
 }
 
