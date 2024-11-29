@@ -68,7 +68,8 @@ class Display{
 class Product {
     public String name;
     public int price;
-
+    
+    //constructor
     Product(String name,int price){
         this.name = name;
         this.price = price;
@@ -126,8 +127,10 @@ class Products extends Display{
 }
 
 abstract class User {
+    // Abstraction
     protected String userName;
-    
+
+    //constructor
     public User(String userName) {
         this.userName = userName;
     }
@@ -151,7 +154,7 @@ class Account extends User {
 
     private int balance; 
 
-    
+    //constructor
     public Account(String userName) {
        super(userName);
        this.balance = 1000; //Setter
