@@ -1,6 +1,6 @@
 import java.util.*;
 
-class ShopOn {
+class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         System.out.println("Welcome to 'SHOP-ON', a E-commerce stimulation!");
@@ -50,18 +50,33 @@ class ShopOn {
     }
 }
 
-class Products{
-
-    private class Product {
-        private String name;
-        private int price;
-
-        Product(String name,int price){
-            this.name = name;
-            this.price = price;
-            counter++;
+class Display{
+    public void display (int count, ArrayList<Product> productList){
+        int ID = 1;
+        System.out.println("Total number of products available: "+count);
+        System.out.println("----------------------------------");
+        System.out.println("ID    NAME    PRICE");
+        System.out.println("----------------------------------");
+        for(Product item : productList){
+            System.out.println(ID+"    "+item.name+"    "+item.price);
+            ID++;
         }
+        System.out.println("----------------------------------");
     }
+}
+
+class Product {
+    public String name;
+    public int price;
+
+    Product(String name,int price){
+        this.name = name;
+        this.price = price;
+
+    }
+}
+class Products extends Display{
+
     private ArrayList<Product> productList;
 
     private static int counter = 0;
@@ -86,6 +101,7 @@ class Products{
     public void addProduct (String name,int price){
         if(counter < limit){
             productList.add(new Product(name,price));
+            counter++;
             System.out.println("** Item Added Successfully **");
             this.displayProducts();
         }else{
@@ -98,18 +114,9 @@ class Products{
          System.out.println("** Purchase Successful **");
         this.displayProducts();
     }
-    
+
     public void displayProducts (){
-        int ID = 1;
-        System.out.println("Total number of products available: "+getCount());
-        System.out.println("----------------------------------");
-        System.out.println("ID    NAME    PRICE");
-        System.out.println("----------------------------------");
-        for(Product item : productList){
-            System.out.println(ID+"    "+item.name+"    "+item.price);
-            ID++;
-        }
-        System.out.println("----------------------------------");
+        display(getCount(),productList);
     }
 
 
