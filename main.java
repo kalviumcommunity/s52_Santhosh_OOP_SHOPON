@@ -126,6 +126,7 @@ class Products extends Display{
 }
 
 abstract class User {
+    // Abstraction
     protected String userName;
     
     public User(String userName) {
