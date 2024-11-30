@@ -51,6 +51,7 @@ class Main {
 }
 
 class Display{
+    //Single Responsibility principle
     public void display (int count, ArrayList<Product> productList){
         int ID = 1;
         System.out.println("Total number of products available: "+count);
@@ -66,6 +67,7 @@ class Display{
 }
 
 class Product {
+    //Single Responsibility principle
     public String name;
     public int price;
     
@@ -77,6 +79,7 @@ class Product {
     }
 }
 class Products extends Display{
+    //Single Responsibility principle
 
     private ArrayList<Product> productList;
 
@@ -150,7 +153,7 @@ abstract class User {
 }
 
 class Account extends User {
-    //Encapsulation
+    //Single Responsibility principle
 
     private int balance; 
 
