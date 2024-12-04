@@ -80,6 +80,7 @@ class Product {
 }
 class Products extends Display{
     //Single Responsibility principle
+    // Open/Closed Principle (OCP)
 
     private ArrayList<Product> productList;
 
@@ -131,6 +132,7 @@ class Products extends Display{
 
 abstract class User {
     // Abstraction
+    // Open/Closed Principle (OCP)
     protected String userName;
 
     //constructor
