@@ -156,6 +156,7 @@ abstract class User {
 
 class Account extends User {
     //Single Responsibility principle
+    //Liskov Substitution Principle (LSP):
 
     private int balance; 
 
